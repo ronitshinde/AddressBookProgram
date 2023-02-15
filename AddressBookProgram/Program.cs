@@ -10,7 +10,11 @@ namespace AddressBookProgram
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Welcome to the Address Book problem");
+            AddressBook addBook = new AddressBook();
+            addBook.CreateContact();
+            addBook.Display();
+            Console.ReadLine();
         }
     }
 }
