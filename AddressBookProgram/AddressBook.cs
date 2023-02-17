@@ -14,6 +14,7 @@ namespace AddressBookProgram
 
         public void CreateContact()
         {
+            Contact contact = new Contact();
             Console.WriteLine("Enter your First Name");
             contact.FirstName = Console.ReadLine();
             Console.WriteLine("Enter your Last Name");
@@ -105,8 +106,8 @@ namespace AddressBookProgram
 
                 }
                 contactList.Remove(deleteContact);
-                Console.WriteLine("Contact has been deleted");
             }
+            Console.WriteLine("Contact has been deleted");
         }
     }
 }
