@@ -37,10 +37,13 @@ namespace AddressBookProgram
         }
         public void Display()
         {
-            Console.WriteLine("Contact Details As Mentioned Below " + "\n\n First Name : " + contact.FirstName + "\n Last Name : " + contact.LastName + "\n Address : " + contact.Address + "\n City : " + contact.City + "\n State : " + contact.State + "\n Zip : " + contact.Zip + "\n Phone Number : " + contact.PhoneNumber + "\n Email : " + contact.Email);
+            foreach (var contact in contactList)
+                Console.WriteLine("Contact Details As Mentioned Below " + "\n\n First Name : " + contact.FirstName + "\n Last Name : " + contact.LastName + "\n Address : " + contact.Address + "\n City : " + contact.City + "\n State : " + contact.State + "\n Zip : " + contact.Zip + "\n Phone Number : " + contact.PhoneNumber + "\n Email : " + contact.Email);
         }
-        public void EditContact(string name)
+        public void EditContact()
         {
+            Console.WriteLine("Enter The First Name");
+            string name = Console.ReadLine();
             foreach (var contact in contactList)
             {
                 if (contact.FirstName.Equals(name))
@@ -71,7 +74,7 @@ namespace AddressBookProgram
                             break;
                         case 6:
                             Console.WriteLine("Enter the new Zip");
-                            contact.Zip =Convert.ToInt32(Console.ReadLine());
+                            contact.Zip = Convert.ToInt32(Console.ReadLine());
                             break;
                         case 7:
                             Console.WriteLine("Enter the new Phone Number");
@@ -86,23 +89,6 @@ namespace AddressBookProgram
                 else
                 {
                     Console.WriteLine("Contact not found");
-                }
-            }
-        }
-        public void DeleteContact(string name)
-        {
-            Contact deleteContact = new Contact();
-            foreach (var contact in contactList)
-            {
-                if (contact.FirstName.Equals(name))
-                {
-                    deleteContact = contact;
-                    contactList.Remove(deleteContact);
-                }
-                
-                else
-                {
-                    Console.WriteLine("Contact Not Found");
                 }
             }
         }
