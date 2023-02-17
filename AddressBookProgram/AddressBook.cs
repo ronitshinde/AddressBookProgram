@@ -92,5 +92,21 @@ namespace AddressBookProgram
                 }
             }
         }
+        public void DeleteContact()
+        {
+            Console.WriteLine("Enter the First Name");
+            string name = Console.ReadLine();
+            Contact deleteContact = new Contact();
+            foreach (var contact in contactList.ToList())
+            {
+                if (contact.FirstName.Equals(name))
+                {
+                    deleteContact = contact;
+
+                }
+                contactList.Remove(deleteContact);
+                Console.WriteLine("Contact has been deleted");
+            }
+        }
     }
 }

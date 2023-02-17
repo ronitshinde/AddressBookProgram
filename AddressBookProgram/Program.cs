@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace AddressBookProgram
 {
@@ -18,7 +19,8 @@ namespace AddressBookProgram
                 Console.WriteLine("Select 1 : To Create Contact");
                 Console.WriteLine("Select 2 : To Edit Created Contact");
                 Console.WriteLine("Select 3 : To Display Existing Contact");
-                Console.WriteLine("Select 4 : To Exit Creating Contact");
+                Console.WriteLine("Select 4 : To Delete Existing Contact");
+                Console.WriteLine("Select 5 : To Exit Creating Contact");
                 Console.WriteLine("Select Option");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -37,10 +39,13 @@ namespace AddressBookProgram
                         Console.ReadLine();
                         break;
                     case 4:
+                        Console.WriteLine("Delete Contact");
+                        addBook.DeleteContact();
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }
-
             }
         }
     }
