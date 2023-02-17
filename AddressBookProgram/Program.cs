@@ -13,12 +13,15 @@ namespace AddressBookProgram
             Console.WriteLine("Welcome to the Address Book problem");
             AddressBook addBook = new AddressBook();
             bool flag = true;
-            while(flag)
+            while (flag)
             {
                 Console.WriteLine("Select 1 : To Create Contact");
-                Console.WriteLine("Select 2 : To Exit Creating Contact");
+                Console.WriteLine("Select 2 : To Edit Created Contact");
+                Console.WriteLine("Select 3 : To Delete From Existing Contact");
+                Console.WriteLine("Select 4 : To Exit Creating Contact");
+                
                 int option = Convert.ToInt32(Console.ReadLine());
-                switch(option)
+                switch (option)
                 {
                     case 1:
                         Console.WriteLine("");
@@ -27,11 +30,23 @@ namespace AddressBookProgram
                         Console.ReadLine();
                         break;
                     case 2:
+                        Console.WriteLine("Edit Contact");
+                        addBook.EditContact("Ronit");
+                        addBook.Display();
+                        Console.ReadLine();
+                        break;
+                    case 3:
+                        Console.WriteLine("Delete Contact");
+                        addBook.DeleteContact("Ronit");
+                        addBook.Display();
+                        Console.ReadLine();
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
+
             }
-            
         }
     }
 }
